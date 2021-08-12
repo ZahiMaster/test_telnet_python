@@ -23,4 +23,6 @@ for server in server_port_list:
         telnet.close()
         print("Test passed" + " " + server[0] + ":" + str(server[1]))
     except socket.timeout:
-        print("Test failed" + " " + server[0] + ":" + str(server[1]))
+        print("Test timeout" + " " + server[0] + ":" + str(server[1]))
+    except socket.error:
+        print("Test error" + " " + server[0] + ":" + str(server[1]))
